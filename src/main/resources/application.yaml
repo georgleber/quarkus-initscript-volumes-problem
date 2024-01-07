@@ -1,0 +1,13 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    devservices:
+      volumes:
+        "./data/db": /var/lib/postgresql/data
+      init-script-path: "db/testdata.sql"
+
+  # Hibernate specific settings
+  hibernate-orm:
+    database:
+      generation: none
+    validate-in-dev-mode: false
